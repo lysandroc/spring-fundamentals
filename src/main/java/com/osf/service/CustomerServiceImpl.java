@@ -11,15 +11,19 @@ import com.osf.repository.CustomerRepository;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-//	@Autowired
+	@Autowired
 	private CustomerRepository customerRepository;
 	
-	@Autowired
-	public CustomerServiceImpl(CustomerRepository customerRepository) {
-		this.customerRepository = customerRepository;
+	public CustomerServiceImpl() {
+		
 	}
 	
 //	@Autowired
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		this.customerRepository = customerRepository;
+	}	
+	
+	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
